@@ -1,0 +1,16 @@
+//Generate allure report
+allure serve build/allure-results
+
+ for APi
+ allure serve allure-results
+
+ //Run
+ mvn test -Dbrowser=chrome
+mvn clean test -Dbrowser=chrome -Dtestng.suite=testng-regression.xml
+
+mvn clean test -Dtestng.suite=testng-iwl.xml
+
+//to run all modules
+mvn clean test site
+//too skip clean
+mvn install test site

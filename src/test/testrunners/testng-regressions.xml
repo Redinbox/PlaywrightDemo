@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Validate list items" thread-count="5"
+	parallel="tests" verbose="4">
+
+	<listeners>
+		<listener class-name="utils.RetryTransformer" />
+		<listener class-name="listeners.ExtentReportListener" />
+		<listener class-name="listeners.TestNGReportListeners" />
+	</listeners>
+
+	<test name="Validate list items Test_chrome">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="tests.LoginPageTest" />
+		</classes>
+	</test>
+
+	<test name="Validate list items Test_Firefox">
+       <parameter name="browser" value="firefox" />
+       <classes>
+           <class name="tests.LoginPageTest" />
+       </classes>
+   </test>
+   <test name="Validate list items Test_Safari">
+       <parameter name="browser" value="safari" />
+       <classes>
+           <class name="tests.LoginPageTest" />
+       </classes>
+   </test>
+
+</suite>
